@@ -4,9 +4,12 @@ const SearchForm = () => {
   const { setSearchTerm } = useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const searchValue = e.target.elements.search.value;
-    if (!searchValue) return;
-    setSearchTerm(searchValue);
+    const searchValue = e.target.elements.search.value?.trim();
+    //console.log(searchValue);
+    if (searchValue !== null && searchValue.length > 1) {
+      //console.log(searchValue);
+      setSearchTerm(searchValue); // 검색어를 공통으로 저장
+    }
   };
   return (
     <section>
