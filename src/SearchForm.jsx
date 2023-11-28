@@ -10,6 +10,7 @@ const SearchForm = () => {
       //console.log(searchValue);
       setSearchTerm(searchValue); // 검색어를 공통으로 저장
     }
+    e.target.elements.search.value = ""; // 검색창 공백으로
   };
   return (
     <section>
