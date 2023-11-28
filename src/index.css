@@ -18,11 +18,33 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-h1 {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 90px;
+
+/* toggle 테마  */
+.toggle-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
 }
+
+.dark-toggle {
+  margin-top: 20px;
+  background-color: transparent;
+  border-color: transparent;
+  width: 5rem;
+  height: 2rem;
+  place-items: center;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
 /* 이미지 갤러리 스타일링 */
 .gallery {
   display: flex;
