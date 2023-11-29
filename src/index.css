@@ -204,21 +204,22 @@ header .buttons i:hover {
   height: 100%;
   object-fit: contain;
 }
+hr {
+  margin: 1rem;
+}
 .table {
   display: flex;
   justify-content: center;
 }
 
 .view,
-.download,
-.like {
+.download {
   margin-top: 1rem;
   text-align: center;
 }
 
 .views,
-.downloads,
-.likes {
+.downloads {
   margin-bottom: 0.5rem;
   color: #333;
 }
