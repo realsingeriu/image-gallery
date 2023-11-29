@@ -9,7 +9,7 @@ const url = `https://api.unsplash.com/search/photos?client_id=${
 const Gallery = ({ setItem }) => {
   const { searchTerm } = useGlobalContext();
   const { data, error, isPending } = useFetch(
-    `${url}&query=${searchTerm}&per_page=20`
+    `${url}&query=${searchTerm}&per_page=30`
   );
   console.log(data);
 
