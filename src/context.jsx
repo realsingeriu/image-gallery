@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
   //다크모드 설정되어 있지 않으면 라이트(false) 모드로 시작함.
   const [isDarkTheme, setIsDarkTheme] = useState(getInitialDarkMode());
   //검색어는 처음에 cat으로 시작
-  const [searchTerm, setSearchTerm] = useState("cat");
+  const [searchTerm, setSearchTerm] = useState("sky");
 
   const toggleDarkTheme = () => {
     const toggle = !isDarkTheme;
