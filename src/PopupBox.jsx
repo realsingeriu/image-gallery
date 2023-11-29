@@ -12,7 +12,7 @@ const PopupBox = ({ item, setItem }) => {
             <i className="uil uil-camera"></i>
             <span>Image Preview</span>
           </div>
-          <div className="buttons">
+          <div className="buttons" onClick={() => setItem(null)}>
             <i className="close-icon uil uil-times"></i>
           </div>
         </header>

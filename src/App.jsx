@@ -6,11 +6,11 @@ import React, { useState } from "react";
 
 function App() {
   const [item, setItem] = useState(null);
+  console.log(item);
   return (
     <main>
       <ThemeToggle />
       <SearchForm />
-      <Gallery />
       <Gallery setItem={setItem} />
       {item && <PopupBox item={item} setItem={setItem} />}
     </main>
