@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const PopupBox = ({ item, setItem }) => {
   //console.log(item);
+  const [photoInfo, setphotoInfo] = useState(null);
   const url = item?.urls?.regular;
 
-  const viewsCount = "6,676,693";
-  const downloadsCount = "235,685";
-  const likesCount = "4,235,568";
+  const shareUrl = item?.links?.html || "https://unsplash.com";
 
-  const shareUrl = "https://www.naver.com";
+  useEffect(() => {
+    const fetchPhotoInfo = async () => {
+      try {
+        const response = await fetch(
+          `https://api.unsplash.com/photos/${item?.id}?client_id=${
+            import.meta.env.VITE_ACCESS_KEY
+          }`
+        );
+        const data = await response.json();
+        setphotoInfo(data);
+      } catch (error) {
+        console.error("Error fetching photo info:", error);
+      }
+    };
+
+    if (item?.id) {
+      fetchPhotoInfo();
+    }
+  }, [item]);
 
   const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     shareUrl
@@ -37,23 +54,25 @@ const PopupBox = ({ item, setItem }) => {
             <img src={url} alt="preview-img" />
           </div>
         </div>
+        <hr></hr>
         <div className="table">
           <div className="view">
             <i className="uil uil-eye"></i>
             <h3 className="views">조회수</h3>
-            <span>{viewsCount}</span>
+            <span>{photoInfo?.views}</span>
           </div>
           <div className="download">
             <i className="uil uil-cloud-download"></i>
             <h3 className="downloads">다운로드</h3>
-            <span>{downloadsCount}</span>
+            <span>{photoInfo?.downloads}</span>
           </div>
-          <div className="like">
+          {/* <div className="like">
             <i className="uil uil-heart"></i>
             <h3 className="likes">좋아요</h3>
             <span>{likesCount}</span>
-          </div>
+          </div> */}
         </div>
+        <hr></hr>
         <div className="sharing">
           <div className="twitter">
             <a href={twitterShareUrl} target="_blank" rel="noopener noreferrer">
