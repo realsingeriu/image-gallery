@@ -204,6 +204,44 @@ header .buttons i:hover {
   height: 100%;
   object-fit: contain;
 }
+.table {
+  display: flex;
+  justify-content: center;
+}
+
+.view,
+.download,
+.like {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.views,
+.downloads,
+.likes {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.view,
+.download {
+  margin-right: 1rem; /* Adjust the value as needed */
+}
+
+.sharing {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.twitter,
+.youtube {
+  margin-right: 3rem;
+}
+
+.twitter,
+.youtube,
+.line {
+  font-size: xx-large;
+}
 
 /* Responsive media query code */
 @media screen and (max-width: 688px) {
