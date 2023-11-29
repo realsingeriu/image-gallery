@@ -66,11 +66,11 @@ const PopupBox = ({ item, setItem }) => {
             <h3 className="downloads">다운로드</h3>
             <span>{photoInfo?.downloads}</span>
           </div>
-          {/* <div className="like">
+          <div className="like">
             <i className="uil uil-heart"></i>
             <h3 className="likes">좋아요</h3>
-            <span>{likesCount}</span>
-          </div> */}
+            <span>{photoInfo?.likes}</span>
+          </div>
         </div>
         <hr></hr>
         <div className="sharing">
